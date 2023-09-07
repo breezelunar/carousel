@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.carousel.horizontal {
+    white-space: nowrap;
+    display: flex;
+}
+
+.carousel.vertical {
+    white-space: normal;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.slide {
+    display: inline-block;
+    width: 100vw;
+    height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
