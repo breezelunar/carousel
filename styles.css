@@ -3,34 +3,46 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Avoid scrollbars */
 }
 
 .carousel {
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
     position: relative;
+    overflow: hidden;
+    perspective: 1000px; /* Adds depth perspective when scaling */
 }
 
 .carousel.horizontal {
-    white-space: nowrap;
+    width: 100%;
     display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: scroll; 
+    scroll-snap-type: x mandatory; 
+    -webkit-overflow-scrolling: touch;
+    justify-content: start;
 }
 
 .carousel.vertical {
-    white-space: normal;
-    overflow-y: auto;
+    width: 100vw;
     height: 100vh;
+    overflow-y: scroll; 
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: block;
 }
 
 .slide {
-    display: inline-block;
+    scroll-snap-align: center;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s; /* Smooth scaling transition */
+    flex-shrink: 0; /* This ensures that the flex items don't shrink */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    max-height: 90vh; 
+    max-width: 90vw;
 }

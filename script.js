@@ -1,27 +1,47 @@
-let startX = 0;
-let startY = 0;
-const horizontalCarousel = document.querySelector('.carousel.horizontal');
+let currentHorizontalIndex = 0;
+const horizontalSlides = document.querySelectorAll('.carousel.horizontal .slide');
+const totalHorizontalSlides = horizontalSlides.length;
 
-horizontalCarousel.addEventListener('touchstart', (e) => {
+document.querySelector('.carousel.horizontal').addEventListener('touchstart', handleSwipeStart, false);
+document.querySelector('.carousel.horizontal').addEventListener('touchend', handleSwipeEnd, false);
+
+function handleSwipeStart(e) {
     startX = e.changedTouches[0].clientX;
-    startY = e.changedTouches[0].clientY;
-});
+}
 
-horizontalCarousel.addEventListener('touchend', (e) => {
+function handleSwipeEnd(e) {
     let endX = e.changedTouches[0].clientX;
-    let endY = e.changedTouches[0].clientY;
-
     let distanceX = startX - endX;
-    let distanceY = startY - endY;
 
-    if (Math.abs(distanceX) > Math.abs(distanceY) && Math.abs(distanceX) > 50) {
-        // Horizontal Swipe
+    if (Math.abs(distanceX) > 50) {
         if (distanceX > 0) {
-            // Swiped to left
-            horizontalCarousel.scrollBy({ left: window.innerWidth, behavior: 'smooth' });
+            // Swiped to the left
+            if (currentHorizontalIndex < totalHorizontalSlides - 1) {
+                currentHorizontalIndex++;
+            }
         } else {
-            // Swiped to right
-            horizontalCarousel.scrollBy({ left: -window.innerWidth, behavior: 'smooth' });
+            // Swiped to the right
+            if (currentHorizontalIndex > 0) {
+                currentHorizontalIndex--;
+            }
         }
+        updateHorizontalPosition();
     }
-});
+}
+
+function updateScaling() {
+    horizontalSlides.forEach((slide, index) => {
+        if (index === currentHorizontalIndex) {
+            slide.style.transform = "scale(2.0)"; // Centered image is larger
+        } else {
+            slide.style.transform = "scale(1)"; // Others are at their normal size
+        }
+    });
+}
+
+function updateHorizontalPosition() {
+    const offset = currentHorizontalIndex * window.innerWidth;
+    document.querySelector('.carousel.horizontal').scrollTo({ left: offset, behavior: 'smooth' });
+    updateScaling();
+}
+
