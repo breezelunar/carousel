@@ -43,6 +43,44 @@ body {
 }
 
 img {
-    max-height: 90vh; 
-    max-width: 90vw;
+    max-height: 70vh; 
+    max-width: 70vw;
+}
+
+
+.arrow {
+    position: absolute;
+    width: 250px; /* Change as per your preference */
+    height: 250px;
+    background-size: cover;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.arrow.left {
+    right: 250px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('left-arrow-icon.png');
+}
+
+.arrow.right {
+    left: 250px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('right-arrow-icon.png');
+}
+
+.arrow.top {
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('top-arrow-icon.png');
+}
+
+.arrow.bottom {
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('bottom-arrow-icon.png');
 }
