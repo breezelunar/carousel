@@ -20,7 +20,7 @@ body {
 
 .caption {
     position: absolute;
-    top: 23%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px;
@@ -133,7 +133,7 @@ body {
 
 .v-caption {
     position: absolute;
-    top: 25%;
+    top: 18%;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
@@ -146,7 +146,7 @@ body {
 
 .v-caption {
     position: absolute;
-    top: 25%;             /* Move the top edge to the center of the parent */
+    top: 18%;             /* Move the top edge to the center of the parent */
     left: 50%;            /* Move the left edge to the center of the parent */
     transform: translate(-50%, -50%); /* Offset the position to truly center it */
     padding: 10px;
