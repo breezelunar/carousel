@@ -6,6 +6,37 @@ body {
     overflow: hidden; /* Avoid scrollbars */
 }
 
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.caption {
+    position: absolute;
+    top: 23%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    animation: fadeInOut 3s infinite; /* Apply the fadeInOut animation */
+    font-style: italic;
+    display: flex;          /* Turn on flexbox */
+    align-items: center;    /* Vertically center the items */
+}
+
+.caption i {
+    font-size: 1.5em;
+}
+
+
 .carousel {
     position: relative;
     overflow: hidden;
@@ -31,7 +62,21 @@ body {
     display: block;
 }
 
+.caption.left {
+    top: 50%;
+    left: 5%; /* Adjust this value to place it further from or closer to the left edge */
+    transform: translateY(-50%);
+}
+
+.caption.right {
+    top: 50%;
+    right: 5%; /* Adjust this value to place it further from or closer to the right edge */
+    left: auto; /* override the left property */
+    transform: translateY(-50%);
+}
+
 .slide {
+    position: relative;
     scroll-snap-align: center;
     width: 100vw;
     height: 100vh;
@@ -48,39 +93,67 @@ img {
 }
 
 
-.arrow {
+.caption.bottom {
+    top: 68%; /* Adjust this to position it where you want it vertically */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    background-color: #f4f4f4;
+    color: white;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Avoid scrollbars */
+    /* New background property */
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+}
+ 
+
+.carousel.vertical .slide {
+    position: relative;
+}
+
+.carousel .slide img {
+    display: block;
+    width: 100%;
+}
+
+.slide-heading {
     position: absolute;
-    width: 250px; /* Change as per your preference */
-    height: 250px;
-    background-size: cover;
-    cursor: pointer;
+    top: 100px;   /* adjust this as needed */
+    left: 195px;
+    width: 90%;
+    text-align: center;
+    justify-content: center;
+    transform: translateX(-50%);
     z-index: 10;
+    /* Any additional styles you want for the heading like font-size, color, etc. */
 }
 
-.arrow.left {
-    right: 250px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url('left-arrow-icon.png');
+.v-caption {
+    position: absolute;
+    top: 30%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 57%;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    color: white;
+    font-weight: bold;
 }
 
-.arrow.right {
-    left: 250px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-image: url('right-arrow-icon.png');
-}
-
-.arrow.top {
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url('top-arrow-icon.png');
-}
-
-.arrow.bottom {
-    bottom: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: url('bottom-arrow-icon.png');
+.v-caption {
+    position: absolute;
+    top: 31%;             /* Move the top edge to the center of the parent */
+    left: 50%;            /* Move the left edge to the center of the parent */
+    transform: translate(-50%, -50%); /* Offset the position to truly center it */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-style: italic;
+    display: flex;          /* Turn on flexbox */
+    align-items: center;    /* Vertically center the items */
+    justify-content: center; /* Horizontally center the items */
 }
