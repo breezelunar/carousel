@@ -64,13 +64,13 @@ body {
 
 .caption.left {
     top: 50%;
-    left: 5%; /* Adjust this value to place it further from or closer to the left edge */
+    left: 3%; /* Adjust this value to place it further from or closer to the left edge */
     transform: translateY(-50%);
 }
 
 .caption.right {
     top: 50%;
-    right: 5%; /* Adjust this value to place it further from or closer to the right edge */
+    right: 3%; /* Adjust this value to place it further from or closer to the right edge */
     left: auto; /* override the left property */
     transform: translateY(-50%);
 }
@@ -94,7 +94,7 @@ img {
 
 
 .caption.bottom {
-    top: 68%; /* Adjust this to position it where you want it vertically */
+    top: 73%; /* Adjust this to position it where you want it vertically */
 }
 
 body {
@@ -106,7 +106,7 @@ body {
     padding: 0;
     overflow: hidden; /* Avoid scrollbars */
     /* New background property */
-    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 100%);
 }
  
 
@@ -121,7 +121,7 @@ body {
 
 .slide-heading {
     position: absolute;
-    top: 100px;   /* adjust this as needed */
+    top: 40px;   /* adjust this as needed */
     left: 195px;
     width: 90%;
     text-align: center;
@@ -133,7 +133,7 @@ body {
 
 .v-caption {
     position: absolute;
-    top: 30%;
+    top: 25%;
     padding: 5px 10px;
     border-radius: 5px;
     text-align: center;
@@ -146,7 +146,7 @@ body {
 
 .v-caption {
     position: absolute;
-    top: 31%;             /* Move the top edge to the center of the parent */
+    top: 25%;             /* Move the top edge to the center of the parent */
     left: 50%;            /* Move the left edge to the center of the parent */
     transform: translate(-50%, -50%); /* Offset the position to truly center it */
     padding: 10px;
