@@ -28,27 +28,26 @@ body {
     font-size: 1.5em;
     animation: fadeInOut 3s infinite; /* Apply the fadeInOut animation */
     font-style: italic;
-    display: flex;          /* Turn on flexbox */
-    align-items: center;    /* Vertically center the items */
+    display: flex;
+    align-items: center;
 }
 
 .caption i {
     font-size: 1.5em;
 }
 
-
 .carousel {
     position: relative;
     overflow: hidden;
-    perspective: 1000px; /* Adds depth perspective when scaling */
+    perspective: 1000px;
 }
 
 .carousel.horizontal {
     width: 100%;
     display: flex;
-    flex-wrap: nowrap; 
-    overflow-x: scroll; 
-    scroll-snap-type: x mandatory; 
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     justify-content: start;
 }
@@ -56,7 +55,7 @@ body {
 .carousel.vertical {
     width: 100vw;
     height: 100vh;
-    overflow-y: scroll; 
+    overflow-y: scroll;
     scroll-snap-type: y mandatory;
     -webkit-overflow-scrolling: touch;
     display: block;
@@ -64,14 +63,14 @@ body {
 
 .caption.left {
     top: 50%;
-    left: 3%; /* Adjust this value to place it further from or closer to the left edge */
+    left: 3%;
     transform: translateY(-50%);
 }
 
 .caption.right {
     top: 50%;
-    right: 3%; /* Adjust this value to place it further from or closer to the right edge */
-    left: auto; /* override the left property */
+    right: 3%;
+    left: auto;
     transform: translateY(-50%);
 }
 
@@ -83,18 +82,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.5s; /* Smooth scaling transition */
-    flex-shrink: 0; /* This ensures that the flex items don't shrink */
+    transition: transform 0.5s;
+    flex-shrink: 0;
 }
 
 img {
-    max-height: 70vh; 
+    max-height: 70vh;
     max-width: 70vw;
 }
 
-
 .caption.bottom {
-    top: 73%; /* Adjust this to position it where you want it vertically */
+    top: 73%;
 }
 
 body {
@@ -104,11 +102,9 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Avoid scrollbars */
-    /* New background property */
-    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 100%);
+    overflow: hidden;
+    background: linear-gradient(109.6deg, rgb(88, 117, 55) 11.2%, rgb(37, 60, 16) 51.2%, rgb(0, 0, 0) 100%);
 }
- 
 
 .carousel.vertical .slide {
     position: relative;
@@ -121,14 +117,13 @@ body {
 
 .slide-heading {
     position: absolute;
-    top: 40px;   /* adjust this as needed */
+    top: 40px;
     left: 195px;
     width: 90%;
     text-align: center;
     justify-content: center;
     transform: translateX(-50%);
     z-index: 10;
-    /* Any additional styles you want for the heading like font-size, color, etc. */
 }
 
 .v-caption {
@@ -139,21 +134,21 @@ body {
     text-align: center;
     width: 57%;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-weight: bold;
 }
 
 .v-caption {
     position: absolute;
-    top: 18%;             /* Move the top edge to the center of the parent */
-    left: 50%;            /* Move the left edge to the center of the parent */
-    transform: translate(-50%, -50%); /* Offset the position to truly center it */
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 10px;
     border-radius: 5px;
     font-size: 1em;
     font-style: italic;
-    display: flex;          /* Turn on flexbox */
-    align-items: center;    /* Vertically center the items */
-    justify-content: center; /* Horizontally center the items */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
